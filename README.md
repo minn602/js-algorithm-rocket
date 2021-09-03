@@ -5,4 +5,4 @@
 <a href="https://www.notion.so/JS-c805931f44b842e386b9a71b5abdd49b" target="_blank"><img src="https://img.shields.io/badge/자바스크립트 알고리즘 로켓스터디 Notion Link-ffffff?style=flat-square&logo=Notion&logoColor=black"/></a>
 
 
-![footer](https://capsule-render.vercel.app/api?type=egg&color=30336b&height=130&section=footer)
+![footer](https://capsule-render.vercel.app/api?type=egg&color=ff7979&height=130&section=footer)
