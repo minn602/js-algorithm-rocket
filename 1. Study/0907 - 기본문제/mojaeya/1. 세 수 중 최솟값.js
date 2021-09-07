@@ -33,7 +33,7 @@ rl.on('line', function(line){
         min = C
     } else min
 
-    console.log(number)
+    console.log(min)
 
     
     process.exit()
