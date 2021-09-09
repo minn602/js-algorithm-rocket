@@ -1,9 +1,12 @@
-function solution(a, b, c) {
-  let answer;
-  if (a < b) answer = a;
-  else answer = b;
-  if (c < answer) answer = c;
-  return answer;
+function minNum(a, b, c) {
+  let min;
+  if (a < b) {
+    min = a;
+  } else {
+    min = b;
+  }
+  if (c < min) min = c;
+  return min;
 }
 
-console.log(solution(2, 5, 1));
+console.log(minNum(2, 5, 1));

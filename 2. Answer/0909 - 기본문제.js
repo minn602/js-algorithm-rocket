@@ -1,0 +1,134 @@
+// 📚 1. A를 #으로
+// 1)
+function solution(s){
+  let answer="";
+  for(let x of s){
+      if(x=='A') answer+='#';
+      else answer+=x;
+  }
+  return answer;
+}
+let str="BANANA";
+console.log(solution(str));
+
+// 2)
+function solution(s){
+  let answer=s;
+  answer=answer.replace(/A/g, "#");
+  return answer;
+}
+let str="BANANA";
+console.log(solution(str));
+
+// 📚 2. 문자 찾기
+// 1)
+function solution(s, t){
+  let answer=0;
+  for(let x of s){
+      if(x===t) answer++;
+  }
+  return answer;
+}
+let str="COMPUTERPROGRAMMING";
+console.log(solution(str, 'R'));
+
+// 2)
+function solution(s, t){
+  let answer=s.split(t).length;
+  return answer-1;
+}
+let str="COMPUTERPROGRAMMING";
+console.log(solution(str, 'R'));
+
+// 📚 3. 대문자
+// (1)
+function solution(s){         
+  let answer=0;
+  for(let x of s){
+      //let num=x.charCodeAt();
+      //if(num>=65 && num<=90) answer++;
+      if(x===x.toUpperCase()) answer++; 
+  }
+  return answer;
+}
+let str="JavaScriptAlgorithmRocketStudy";
+console.log(solution(str));
+
+// (2)
+function solution(s){         
+  let answer="";
+  for(let x of s){
+      let num=x.charCodeAt();
+      if(num>=97 && num<=122) answer+=String.fromCharCode(num-32);
+      else answer+=x;
+
+      //if(x===x.toLowerCase()) answer+=x.toUpperCase();
+      //else answer+=x;
+  }
+  return answer;
+}
+let str="JavaScriptAlgorithmRocketStudy";
+console.log(solution(str));
+
+// (3)
+function solution(s){  
+  let answer="";
+  for(let x of s){
+      if(x===x.toUpperCase()) answer+=x.toLowerCase();
+      else answer+=x.toUpperCase();
+  }
+  return answer;
+}
+let str="JavaScriptAlgorithmRocketStudy"
+console.log(solution(str);
+
+// 📚 4. 가장 긴 문자열
+function solution(s){  
+  let answer="", max=Number.MIN_SAFE_INTEGER;
+  for(let x of s){
+      if(x.length>max){
+          max=x.length;
+          answer=x;
+      }
+  }
+  return answer;
+}
+let str=["teacher", "time", "student", "beautiful", "good"];
+console.log(solution(str));
+
+// 📚 5. 가운데 문자 출력
+function solution(s){  
+  let answer;
+  let mid=Math.floor(s.length/2)
+  if(s.length%2===1) answer=s.substring(mid, mid+1);
+  else answer=s.substring(mid-1, mid+1);
+  //if(s.length%2===1) answer=s.substr(mid, 1);
+  //else answer=s.substr(mid-1, 2);
+  return answer;
+}
+console.log(solution("study"));
+console.log(solution("good"));
+
+// 📚 6. 중복문자제거
+function solution(s){  
+  let answer="";
+  //console.log(s.indexOf("K"));
+  for(let i=0; i<s.length; i++){
+      //console.log(s[i], i, s.indexOf(s[i]));
+      if(s.indexOf(s[i])===i) answer+=s[i];
+  }
+  return answer;
+}
+console.log(solution("abbbcddeee"));
+
+// 📚 7. 중복단어제거
+function solution(s){  
+  let answer;
+  //console.log(s.indexOf("time"));
+  answer=s.filter(function(v, i){
+      return s.indexOf(v)===i;
+  });
+  return answer;
+}
+let str=["html", "css", "html", "css", "javascript"];
+console.log(solution(str));
