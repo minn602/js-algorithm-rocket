@@ -10,6 +10,7 @@ function capital(word) {
     if (num >= 65 && num <= 90) answer3 += x.toLowerCase();
     else answer3 += x.toUpperCase();
   }
+  return answer3;
 }
 
 let str = "JavaScriptAlgorithmRocketStudy";
