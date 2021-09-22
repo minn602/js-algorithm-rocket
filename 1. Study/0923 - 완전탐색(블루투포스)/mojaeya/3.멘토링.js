@@ -21,15 +21,15 @@ rl.on('line', function(line){
     let result = []
     let answer = 0
 
-    for(let A=1; A<=N; A++) {   // A 멘토 자리
-        for(let B=1; B<=N; B++) {  // B 멘티 자리
+    for(let A=1; A<=N; A++) {   // A : 멘토 자리
+        for(let B=1; B<=N; B++) {  // B : 멘티 자리
             let count = 0
             for(let i=0; i<M; i++) {  // 수학테스트 케이스
                 let rankA = 0
                 let rankB = 0
                 for(let j=0; j<N; j++) { // 학생 수 케이스
-                    if(test[i][j] === A) rankA = j
-                    if(test[i][j] === B) rankB = j
+                    if(test[i][j] === A) rankA = j // A 멘토자리에 해당하는 학생의 등수
+                    if(test[i][j] === B) rankB = j // B 멘티자리에 해당하는 학생의 등수
                 }
                 if(rankA < rankB) count++
             }
