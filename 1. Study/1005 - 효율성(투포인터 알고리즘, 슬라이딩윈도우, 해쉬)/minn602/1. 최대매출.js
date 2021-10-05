@@ -11,3 +11,5 @@ function solution(n, arr) {
 }
 
 solution(3, [12, 15, 11, 20, 25, 10, 20, 19, 13, 15]);
+
+//수정
