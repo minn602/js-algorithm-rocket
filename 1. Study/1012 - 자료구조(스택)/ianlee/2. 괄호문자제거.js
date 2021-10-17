@@ -1,9 +1,9 @@
-function stack(str) {
+function delBracket(str) {
   let answer;
   let stack = [];
   for (let x of str) {
     if (x === ")") {
-      while (stack.pop() !== "(") stack.pop();
+      while (stack.pop() !== "(");
     } else stack.push(x);
   }
   answer = stack.join("");
@@ -12,4 +12,4 @@ function stack(str) {
 
 let str = "(A(BC)D)EF(G(H)(IJ)K)LM(N)";
 
-console.log(stack(str));
+console.log(delBracket(str));
