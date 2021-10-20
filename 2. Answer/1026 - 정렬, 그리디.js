@@ -98,3 +98,63 @@ function solution(arr) {
 
 let arr = [11, 7, 5, 6, 10, 9];
 console.log(solution(arr));
+
+// 📚 5. LRU
+// 1)
+function solution(size, arr) {
+  let answer = Array.from({ length: size }, () => 0);
+  arr.forEach((x) => {
+    let pos = -1;
+    for (let i = 0; i < size; i++) if (x === answer[i]) pos = i;
+    if (pos === -1) {
+      for (let i = size - 1; i >= 1; i--) {
+        answer[i] = answer[i - 1];
+      }
+    } else {
+      for (let i = pos; i >= 1; i--) {
+        answer[i] = answer[i - 1];
+      }
+    }
+    answer[0] = x;
+  });
+
+  return answer;
+}
+
+let arr = [1, 2, 3, 2, 6, 2, 3, 5, 7];
+console.log(solution(5, arr));
+
+// 2)
+function solution(size, arr) {
+  let answer = [];
+  arr.forEach((x) => {
+    let pos = -1;
+    for (let i = 0; i < size; i++) if (x === answer[i]) pos = i;
+    if (pos === -1) {
+      answer.unshift(x);
+      if (answer.length > size) answer.pop();
+    } else {
+      answer.splice(pos, 1);
+      answer.unshift(x);
+    }
+  });
+
+  return answer;
+}
+
+let arr = [1, 2, 3, 2, 6, 2, 3, 5, 7];
+console.log(solution(5, arr));
+
+// 📚 6. 장난꾸러기 현수
+function solution(arr) {
+  let answer = [];
+  let sortArr = arr.slice();
+  sortArr.sort((a, b) => a - b);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== sortArr[i]) answer.push(i + 1);
+  }
+  return answer;
+}
+
+let arr = [120, 125, 152, 130, 135, 135, 143, 127, 160];
+console.log(solution(arr));
