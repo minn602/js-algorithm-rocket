@@ -1,5 +1,3 @@
-// 그리디 알고리즘은 문제 해결과정에서 순간순간마다 최적이라고 생각되는 해를 선택하여, 최종 해답에 도달하는 문제 해결 방식이다.
-
 function solution(arr) {
     let result = []
     let origin = [...arr]  // arr.slice()
